@@ -1,0 +1,11 @@
+CREATE TABLE `currency_category` (
+	`sid` INT(11) NOT NULL AUTO_INCREMENT,
+	`currency` VARCHAR(255) NOT NULL,
+	`currency_chinese_name` VARCHAR(255) NOT NULL,
+	`create_time` DATETIME NOT NULL,
+	`update_time` DATETIME NULL DEFAULT NULL,
+	PRIMARY KEY (`sid`) USING BTREE,
+	UNIQUE INDEX `currency` (`currency`) USING BTREE
+)
+ENGINE=InnoDB
+;
