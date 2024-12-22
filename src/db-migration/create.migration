@@ -3,7 +3,8 @@ CREATE TABLE `currency_category` (
 	`currency` VARCHAR(255) NOT NULL,
 	`currency_chinese_name` VARCHAR(255) NOT NULL,
 	`create_time` DATETIME NOT NULL,
-	`update_time` DATETIME NULL DEFAULT NULL,
+	`update_time` DATETIME,
+    `rate_float` FLOAT,
 	PRIMARY KEY (`sid`) USING BTREE,
 	UNIQUE INDEX `currency` (`currency`) USING BTREE
 )
