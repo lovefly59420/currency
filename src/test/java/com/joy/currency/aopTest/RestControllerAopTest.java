@@ -9,6 +9,7 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -66,7 +67,7 @@ public class RestControllerAopTest {
         // 模擬 JoinPoint
         when(joinPoint.getSignature()).thenReturn(signature);
         when(signature.getName()).thenReturn("testMethod");
-        when(joinPoint.proceed()).thenReturn(null);
+        when(joinPoint.proceed()).thenReturn(ResponseEntity.ok().body("uccz7j712Qs3exVpWyNkPEPwyvPYx9SiCYITuQms5JHCqvCE5M3Avq1DmDyz7V/Jxr+4C9H7wC4tVZaLnAHR3RAOxy9gS4m7tifgW5fnOAwnySbj3wcOgWHLstyerhwIwD/Ubj00sw24KFi2PgzaJpHR6eBOOiohEFf4yCsGojHm3fxv0GgtA3hDjg8QMBVptM0u0kdHuvXhvzFc7+EWtY1hQiEz4MzgEZ6AsUmsJUvQs26XQpUBkf8rT3+i/Q6c1a7VojUqlbXkP4dk/6sSeRqkYhRkKQNNNY1+rSZ70Wo="));
 
         // 執行切面方法
         restControllerAop.logAround(joinPoint);
