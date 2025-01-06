@@ -3,7 +3,7 @@
  乙、Error handling 處理API response
 
 2.swagger-ui: http://localhost:8080/swagger-ui/index.html
-![img.png](img.png)
+![img_1.png](img_1.png)
 
 3.多語系設計: 繁中、簡中、英文、日文。
 
