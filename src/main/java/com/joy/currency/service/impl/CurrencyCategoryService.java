@@ -69,12 +69,23 @@ public class CurrencyCategoryService implements ICurrencyCategoryService {
             currencyCategorys.forEach(currencyCategory->currencyCategory.setCreateTime(new Date()));
             List<CurrencyCategory> result = currencyCategoryRepository.saveAll(currencyCategorys);
 
-            response.setStatusCode(ErrorCodeEnum.OK.getErrorCode());
-            response.setCurrencyCategoryList(result);
-            response.setMessage(MessageEnum.SAVE_ALL_SUCCESS.getMessage());
+//            response.setStatusCode(ErrorCodeEnum.OK.getErrorCode());
+//            response.setCurrencyCategoryList(result);
+//            response.setMessage(MessageEnum.SAVE_ALL_SUCCESS.getMessage());
+
+            response = Response.builder()
+                    .statusCode(ErrorCodeEnum.OK.getErrorCode())
+                    .currencyCategoryList(result)
+                    .message(MessageEnum.SAVE_ALL_SUCCESS.getMessage())
+                    .build();
         } catch (Exception e){
-            response.setStatusCode(ErrorCodeEnum.EXCEPTION.getErrorCode());
-            response.setMessage(MessageEnum.SAVE_ALL_ERROR.getMessage() + e.getMessage());
+//            response.setStatusCode(ErrorCodeEnum.EXCEPTION.getErrorCode());
+//            response.setMessage(MessageEnum.SAVE_ALL_ERROR.getMessage() + e.getMessage());
+
+            response = Response.builder()
+                    .statusCode(ErrorCodeEnum.EXCEPTION.getErrorCode())
+                    .message(MessageEnum.SAVE_ALL_ERROR.getMessage() + e.getMessage())
+                    .build();
         }
         return response;
     }
